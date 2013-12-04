@@ -15,7 +15,8 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        report: 'gzip'
+        report: 'gzip',
+        banner: '<%= meta.banner %>'
       },
       wkt: {
         src: ["terraformer-wkt-parser.js"],
