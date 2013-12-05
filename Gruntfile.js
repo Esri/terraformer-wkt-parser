@@ -103,6 +103,12 @@ module.exports = function (grunt) {
     }
   });
 
+  var awsExists = fs.existsSync(process.env.HOME + '/terraformer-s3.json');
+
+  if (awsExists) {
+    grunt.config.set('aws', grunt.file.readJSON(process.env.HOME + '/terraformer-s3.json'));
+  }
+
   grunt.registerTask('wkt-parser', 'Building WKT Parser', function() {
     var grammar = fs.readFileSync('./src/wkt.yy', 'utf8');
 
