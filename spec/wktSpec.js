@@ -707,16 +707,4 @@ describe("WKT Parser", function() {
     expect(output.type).toEqual("MultiPolygon");
   });
 
-  it("should throw an error on a bad parse", function(){
-    var input = "FOO BAR BAZ";
-    var error;
-    try {
-      var output = new Terraformer.WKT.parse(input);
-    } catch (err) {
-      error = err.toString();
-    }
-
-    expect(error).toEqual("Error: Unable to parse");
-  });
-
 });

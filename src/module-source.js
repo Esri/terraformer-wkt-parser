@@ -108,7 +108,7 @@
     try {
       res = parser.parse(element);
     } catch (err) {
-      throw Error("Unable to parse", err);
+      throw Error("Unable to parse: " + err);
     }
 
     return Terraformer.Primitive(res);

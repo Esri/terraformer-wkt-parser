@@ -23,7 +23,8 @@ yy: {},
 symbols_: {"error":2,"expressions":3,"point":4,"EOF":5,"linestring":6,"polygon":7,"multipoint":8,"multilinestring":9,"multipolygon":10,"coordinate":11,"DOUBLE_TOK":12,"ptarray":13,"COMMA":14,"ring_list":15,"ring":16,"(":17,")":18,"POINT":19,"Z":20,"ZM":21,"M":22,"EMPTY":23,"point_untagged":24,"polygon_list":25,"polygon_untagged":26,"point_list":27,"LINESTRING":28,"POLYGON":29,"MULTIPOINT":30,"MULTILINESTRING":31,"MULTIPOLYGON":32,"$accept":0,"$end":1},
 terminals_: {2:"error",5:"EOF",12:"DOUBLE_TOK",14:"COMMA",17:"(",18:")",19:"POINT",20:"Z",21:"ZM",22:"M",23:"EMPTY",28:"LINESTRING",29:"POLYGON",30:"MULTIPOINT",31:"MULTILINESTRING",32:"MULTIPOLYGON"},
 productions_: [0,[3,2],[3,2],[3,2],[3,2],[3,2],[3,2],[11,2],[11,3],[11,4],[13,3],[13,1],[15,3],[15,1],[16,3],[4,4],[4,5],[4,5],[4,5],[4,2],[24,1],[24,3],[25,3],[25,1],[26,3],[27,3],[27,1],[6,4],[6,5],[6,5],[6,5],[6,2],[7,4],[7,5],[7,5],[7,5],[7,2],[8,4],[8,5],[8,5],[8,5],[8,2],[9,4],[9,5],[9,5],[9,5],[9,2],[10,4],[10,5],[10,5],[10,5],[10,2]],
-performAction: function anonymous(yytext,yyleng,yylineno,yy,yystate,$,_$) {
+performAction: function anonymous(yytext,yyleng,yylineno,yy,yystate,$,_$
+/**/) {
 
 var $0 = $.length - 1;
 switch (yystate) {
@@ -409,7 +410,8 @@ pushState:function begin(condition) {
         this.begin(condition);
     }});
 lexer.options = {};
-lexer.performAction = function anonymous(yy,yy_,$avoiding_name_collisions,YY_START) {
+lexer.performAction = function anonymous(yy,yy_,$avoiding_name_collisions,YY_START
+/**/) {
 
 var YYSTATE=YY_START
 switch($avoiding_name_collisions) {
@@ -547,7 +549,7 @@ return new Parser;
     try {
       res = parser.parse(element);
     } catch (err) {
-      throw Error("Unable to parse", err);
+      throw Error("Unable to parse: " + err);
     }
 
     return Terraformer.Primitive(res);
