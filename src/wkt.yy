@@ -4,23 +4,23 @@
 
 %%
 
-\s+                           // ignore
-"("                           return '('
-")"                           return ')'
-"-"?[0-9]+("."[0-9]+)?        return 'DOUBLE_TOK'
-"POINT"                       return 'POINT'
-"LINESTRING"                  return 'LINESTRING'
-"POLYGON"                     return 'POLYGON'
-"MULTIPOINT"                  return 'MULTIPOINT'
-"MULTILINESTRING"             return 'MULTILINESTRING'
-"MULTIPOLYGON"                return 'MULTIPOLYGON'
-","                           return 'COMMA'
-"EMPTY"                       return 'EMPTY'
-"M"                           return 'M'
-"Z"                           return 'Z'
-"ZM"                          return 'ZM'
-<<EOF>>                       return 'EOF'
-.                             return "INVALID"
+\s+                                          // ignore
+"("                                          return '('
+")"                                          return ')'
+"-"?[0-9]+("."[0-9]+)?([eE][\-\+]?[0-9]+)?   return 'DOUBLE_TOK'
+"POINT"                                      return 'POINT'
+"LINESTRING"                                 return 'LINESTRING'
+"POLYGON"                                    return 'POLYGON'
+"MULTIPOINT"                                 return 'MULTIPOINT'
+"MULTILINESTRING"                            return 'MULTILINESTRING'
+"MULTIPOLYGON"                               return 'MULTIPOLYGON'
+","                                          return 'COMMA'
+"EMPTY"                                      return 'EMPTY'
+"M"                                          return 'M'
+"Z"                                          return 'Z'
+"ZM"                                         return 'ZM'
+<<EOF>>                                      return 'EOF'
+.                                            return "INVALID"
 
 /lex
 
