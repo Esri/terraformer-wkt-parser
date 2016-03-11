@@ -408,6 +408,14 @@ describe("WKT Parser", function() {
     expect(output.type).toEqual("Point");
   });
 
+  it("should parse a POINT with scientific notation coordinates", function(){
+    var input = "POINT (30e0 10 2.0E+001 15)";
+    var output = new Terraformer.WKT.parse(input);
+    expect(output.coordinates).toEqual([30,10,20,15]);
+    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output.type).toEqual("Point");
+  });
+
   it("should parse a LINESTRING", function(){
     var input = "LINESTRING (30 10, 10 30, 40 40)";
     var output = new Terraformer.WKT.parse(input);
