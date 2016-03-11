@@ -1,27 +1,17 @@
 {
   "name": "terraformer-wkt-parser",
-  "version": "1.0.2",
   "description": "Well-Known Text parser",
-  "main": "terraformer-wkt-parser.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "grunt test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:Esri/terraformer-wkt-parser.git"
-  },
-  "keywords": [
-    "WKT",
-    "GIS",
-    "Geography"
-  ],
+  "version": "1.1.0",
   "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com)",
-  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Esri/terraformer-wkt-parser/issues"
+  },
+  "contributors": [
+    "Patrick Arlt <parlt@esri.com>",
+    "John Gravois <jgravois@esri.com>"
+  ],
   "dependencies": {
-    "terraformer": "~0.1.7"
+    "terraformer": "~1.0.5"
   },
   "devDependencies": {
     "vows": "~0.7.0",
@@ -33,5 +23,23 @@
     "grunt-jasmine-node": "https://github.com/magicmoose/grunt-jasmine-node/tarball/master",
     "grunt-template-jasmine-istanbul": "~0.2.4",
     "grunt-s3": "~0.2.0-alpha.3"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "homepage": "http://terraformer.io",
+  "keywords": [
+    "WKT",
+    "GIS",
+    "Geography"
+  ],
+  "license": "MIT",
+  "main": "terraformer-wkt-parser.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Esri/terraformer-wkt-parser.git"
+  },
+  "scripts": {
+    "test": "grunt test"
   }
 }
