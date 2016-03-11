@@ -3,10 +3,8 @@
   // Node.
   if(typeof module === 'object' && typeof module.exports === 'object') {
     exports = module.exports = factory(require("terraformer"));
-  }
-
-  // Browser Global.
-  if(typeof navigator === "object") {
+  } else if(typeof navigator === "object") {
+    // Browser Global.
     if (!root.Terraformer){
       throw new Error("Terraformer.WKT requires the core Terraformer library. http://github.com/esri/terraformer")
     }
