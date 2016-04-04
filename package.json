@@ -22,7 +22,8 @@
     "grunt-contrib-jasmine": "~0.4.2",
     "grunt-jasmine-node": "https://github.com/magicmoose/grunt-jasmine-node/tarball/master",
     "grunt-template-jasmine-istanbul": "~0.2.4",
-    "grunt-s3": "~0.2.0-alpha.3"
+    "grunt-s3": "~0.2.0-alpha.3",
+    "mkdirp": "^0.5.1"
   },
   "directories": {
     "test": "test"
@@ -40,6 +41,7 @@
     "url": "git@github.com:Esri/terraformer-wkt-parser.git"
   },
   "scripts": {
+    "pretest": "mkdirp dist",
     "test": "grunt test"
   }
 }
