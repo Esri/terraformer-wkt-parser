@@ -1,5 +1,7 @@
 # Terraformer Well-Known Text Parser
 
+[![Build Status](https://travis-ci.org/Esri/terraformer-wkt-parser.svg?branch=master)](https://travis-ci.org/Esri/terraformer-wkt-parser)
+
 This package is part of the [Terraformer](http://terraformer.io) project.
 
 A bare-bones WKT parser.  Given a WKT primitive, it parses and returns a `Terraformer Primitive`.
@@ -41,10 +43,10 @@ var polygon = wkt.convert(
 ```html
     <!-- Load the main Terraformer library -->
     <script src="terraformer.min.js" type="text/javascript"></script>
-    
+
     <!-- Load the WKT Parser -->
     <script src="terraformer-wkt-parser.min.js" type="text/javascript"></script>
-    
+
     <!-- Use it! -->
     <script>
       var primitive = Terraformer.WKT.parse('LINESTRING (30 10, 10 30, 40 40)');
