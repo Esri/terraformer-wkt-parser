@@ -3,3 +3,8 @@ coverage
 SpecRunner.html
 .grunt
 dist
+npm-debug.log
+
+# TypeScript
+typings/
+test.js
