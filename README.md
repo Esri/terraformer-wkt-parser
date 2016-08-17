@@ -2,9 +2,7 @@
 
 [![Build Status](https://travis-ci.org/Esri/terraformer-wkt-parser.svg?branch=master)](https://travis-ci.org/Esri/terraformer-wkt-parser)
 
-This package is part of the [Terraformer](http://terraformer.io) project.
-
-A bare-bones WKT parser.  Given a WKT primitive, it parses and returns a `Terraformer Primitive`.
+> Two way conversion between [GeoJSON](http://geojson.org/geojson-spec.html) and WKT. Part of the [Terraformer](http://terraformer.io) project.
 
 ## Installing
 
@@ -25,10 +23,10 @@ For full documentation check out the [offical website](http://terraformer.io/wkt
 ```js
 var wkt = require('terraformer-wkt-parser');
 
-// parse a WKT file, convert it into a primitive
+// parse a WKT file, convert it into a terraformer primitive
 var primitive = wkt.parse('LINESTRING (30 10, 10 30, 40 40)');
 
-// take a primitive and convert it into a WKT representation
+// take a terraformer primitive and convert it into a WKT representation
 var polygon = wkt.convert(
   {
     "type": "Polygon",

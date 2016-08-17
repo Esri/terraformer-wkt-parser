@@ -4,7 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [1.1.1] - 2016-08-17
+
+### Added
+* typings for TypeScript folks (thx [@JeffJacobson](https://github.com/JeffJacobson)) [#20](https://github.com/Esri/terraformer-wkt-parser/pull/20)
+
 ## [1.1.0] - 2016-03-11
+
 ### Added
 * Support for coordinates in Scientific Notation
 
