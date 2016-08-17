@@ -1,6 +1,6 @@
 var vows    = require('vows'),
     assert  = require('assert'),
-    wkt     = require('../dist/terraformer-wkt-parser');
+    wkt     = require('../terraformer-wkt-parser');
 
 var fs = require('fs');
 

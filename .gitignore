@@ -2,9 +2,13 @@ node_modules
 coverage
 SpecRunner.html
 .grunt
-dist
+
 npm-debug.log
 
 # TypeScript
 typings/
 test.js
+
+# built files
+terraformer-wkt-parser.js
+terraformer-wkt-parser.min.js
