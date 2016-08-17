@@ -18,8 +18,8 @@ module.exports = function (grunt) {
         banner: '<%= meta.banner %>'
       },
       wkt: {
-        src: ["dist/terraformer-wkt-parser.js"],
-        dest: 'dist/terraformer-wkt-parser.min.js'
+        src: ["terraformer-wkt-parser.js"],
+        dest: 'terraformer-wkt-parser.min.js'
       }
     },
 
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
     jasmine: {
       coverage: {
         src: [
-          "dist/terraformer-wkt-parser.js"
+          "terraformer-wkt-parser.js"
         ],
         options: {
           specs: 'spec/*Spec.js',
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
       dev: {
         upload: [
           {
-            src: 'dist/terraformer-wkt-parser.min.js',
+            src: 'terraformer-wkt-parser.min.js',
             dest: 'terraformer-wkt-parser/<%= pkg.version %>/terraformer-wkt-parser.min.js'
           }
         ]
@@ -118,7 +118,7 @@ module.exports = function (grunt) {
 
     wrapper = wrapper.replace('"SOURCE";', parserSource);
 
-    fs.writeFileSync("./dist/terraformer-wkt-parser.js", wrapper, "utf8");
+    fs.writeFileSync("./terraformer-wkt-parser.js", wrapper, "utf8");
 
     grunt.log.write('Files created.\n');
   });
