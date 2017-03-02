@@ -350,6 +350,22 @@ describe("WKT Convert", function () {
     expect(output).toEqual("MULTIPOLYGON EMPTY");
   });
 
+  it("should convert a GEOMETRYCOLLECTION", function(){
+    var input = {
+      "type": "GeometryCollection",
+      "geometries": [
+        { "type": "Point",
+          "coordinates": [100.0, 0.0]
+          },
+        { "type": "LineString",
+          "coordinates": [ [101.0, 0.0], [102.0, 1.0] ]
+          }
+      ]
+    }
+    var output = Terraformer.WKT.convert(input);
+    expect(output).toEqual('GEOMETRYCOLLECTION(POINT (100 0), LINESTRING (101 0, 102 1))');
+  });
+
   it("should fail a conversion on an unknown type", function () {
     var input = { "type": "MultiPolygonLikeThingy",
       "coordinates": [ ]
@@ -714,5 +730,4 @@ describe("WKT Parser", function() {
     expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
     expect(output.type).toEqual("MultiPolygon");
   });
-
 });

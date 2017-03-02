@@ -304,12 +304,17 @@
         return multiLineStringToWKTMultiLineString(primitive);
       case 'MultiPolygon':
         return multiPolygonToWKTMultiPolygon(primitive);
+      case 'GeometryCollection':
+        var ret = 'GEOMETRYCOLLECTION';
+        var parts = [ ];
+        for (i = 0; i < primitive.geometries.length; i++){
+          parts.push(convert(primitive.geometries[i]));
+        }
+        return ret + '(' + parts.join(', ') + ')';
       default:
         throw Error ("Unknown Type: " + primitive.type);
     }
   }
-
-
 
   exports.parser  = parser;
   exports.Parser  = parser.Parser;
