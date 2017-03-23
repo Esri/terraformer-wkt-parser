@@ -38,6 +38,7 @@
   ],
   "license": "MIT",
   "main": "terraformer-wkt-parser.js",
+  "typings": "./terraformer-wkt-parser.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:Esri/terraformer-wkt-parser.git"
