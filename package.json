@@ -11,6 +11,7 @@
     "John Gravois <jgravois@esri.com>"
   ],
   "dependencies": {
+    "@types/geojson": "^1.0.0",
     "terraformer": "~1.0.5"
   },
   "devDependencies": {
