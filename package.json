@@ -11,6 +11,7 @@
     "John Gravois <jgravois@esri.com>"
   ],
   "dependencies": {
+    "@types/geojson": "^1.0.0",
     "terraformer": "~1.0.5"
   },
   "devDependencies": {
@@ -23,8 +24,8 @@
     "grunt-vows": "~0.4.0",
     "jison": "~0.3.12",
     "mkdirp": "^0.5.1",
-    "typescript": "^1.8.10",
-    "typings": "^1.3.2",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1",
     "vows": "~0.7.0"
   },
   "directories": {
@@ -38,6 +39,7 @@
   ],
   "license": "MIT",
   "main": "terraformer-wkt-parser.js",
+  "typings": "./terraformer-wkt-parser.d.ts",
   "repository": {
     "type": "git",
     "url": "git@github.com:Esri/terraformer-wkt-parser.git"
@@ -45,6 +47,9 @@
   "scripts": {
     "pretest": "mkdirp dist",
     "test": "grunt test",
-    "test:ts": "typings install && tsc"
+    "test:ts": "tslint test.ts terraformer-wkt-parser.d.ts && tsc -p tsconfig.json && node test.js"
+  },
+  "engines": {
+    "node": ">=4.2.6"
   }
 }
