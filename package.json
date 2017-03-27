@@ -47,6 +47,9 @@
   "scripts": {
     "pretest": "mkdirp dist",
     "test": "grunt test",
-    "test:ts": "typings install && tsc"
+    "test:ts": "tslint test.ts terraformer-wkt-parser.d.ts && tsc -p tsconfig.json && node test.js"
+  },
+  "engines": {
+    "node": ">=4.2.6"
   }
 }
