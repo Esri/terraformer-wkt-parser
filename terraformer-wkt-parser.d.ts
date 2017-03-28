@@ -1,8 +1,5 @@
-declare namespace Terraformer {
-    namespace WKT {
-        function parse(wkt: string): GeoJSON.GeometryObject;
-        function convert(geoJSON: GeoJSON.GeometryObject): string;
-    }
+export = WKT;
+declare namespace WKT {
+    export function parse(wkt: string): GeoJSON.GeometryObject;
+    export function convert(geoJSON: GeoJSON.GeometryObject): string;
 }
-
-export = Terraformer.WKT;

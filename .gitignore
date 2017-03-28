@@ -2,6 +2,7 @@ node_modules
 coverage
 SpecRunner.html
 .grunt
+.nvmrc
 
 npm-debug.log
 
