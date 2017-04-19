@@ -1,5 +1,6 @@
 {
   "name": "terraformer-wkt-parser",
+  "license": "MIT",
   "main": "terraformer-wkt-parser.min.js",
   "ignore"        : ["versions", "spec", "examples", "test"],
   "dependencies": {
