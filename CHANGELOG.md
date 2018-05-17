@@ -4,6 +4,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [1.2.0] - 2018-05-17
+
+### Added
+* Support for parsing GeoJSON [GeometryCollections](https://tools.ietf.org/html/rfc7946#section-3.1.8).
+
 ## [1.1.2] - 2016-08-17
 
 ### Fixed
@@ -30,7 +35,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 Initial Release
 
-[unreleased]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.2...HEAD
+[unreleased]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.2...v1.2.0
 [1.1.2]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.0.1...v1.1.0

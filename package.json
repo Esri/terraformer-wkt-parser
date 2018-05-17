@@ -1,7 +1,7 @@
 {
   "name": "terraformer-wkt-parser",
   "description": "Well-Known Text parser",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "author": "Jerry Sievert <code@legitimatesounding.com> (http://legitimatesounding.com)",
   "bugs": {
     "url": "https://github.com/Esri/terraformer-wkt-parser/issues"
