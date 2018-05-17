@@ -15,6 +15,7 @@
     "terraformer": "~1.0.5"
   },
   "devDependencies": {
+    "gh-release": "^3.2.1",
     "grunt": "0.4.x",
     "grunt-contrib-jasmine": "~0.4.2",
     "grunt-contrib-uglify": "~2.0.0",
@@ -51,7 +52,8 @@
   "scripts": {
     "pretest": "mkdirp dist",
     "test": "grunt test",
-    "test:ts": "tslint test.ts terraformer-wkt-parser.d.ts && tsc -p tsconfig.json && node test.js"
+    "test:ts": "tslint test.ts terraformer-wkt-parser.d.ts && tsc -p tsconfig.json && node test.js",
+    "release": "./release.sh"
   },
   "engines": {
     "node": ">=4.2.6"
