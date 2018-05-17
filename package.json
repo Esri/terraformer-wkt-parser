@@ -50,7 +50,7 @@
     "url": "git@github.com:Esri/terraformer-wkt-parser.git"
   },
   "scripts": {
-    "pretest": "mkdirp dist",
+    "prepare": "grunt wkt-parser && grunt uglify",
     "test": "grunt test",
     "test:ts": "tslint test.ts terraformer-wkt-parser.d.ts && tsc -p tsconfig.json && node test.js",
     "release": "./release.sh"
