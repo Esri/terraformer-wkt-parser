@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     meta: {
       banner: '/*! Terraformer JS - <%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
         '*   https://github.com/esri/terraformer-wkt-parser\n' +
-        '*   Copyright (c) <%= grunt.template.today("yyyy") %> Esri, Inc.\n' +
+        '*   Copyright (c) 2013-<%= grunt.template.today("yyyy") %> Esri, Inc.\n' +
         '*   Licensed MIT */'
     },
 
@@ -35,34 +35,35 @@ module.exports = function (grunt) {
       }
     },
 
-    jasmine: {
-      coverage: {
-        src: [
-          "terraformer-wkt-parser.js"
-        ],
-        options: {
-          specs: 'spec/*Spec.js',
-          helpers: [
-            "node_modules/terraformer/terraformer.js"
-          ],
-          //keepRunner: true,
-          outfile: 'SpecRunner.html',
-          template: require('grunt-template-jasmine-istanbul'),
-          templateOptions: {
-            coverage: './coverage/coverage.json',
-            report: './coverage',
-            // due to the generated aspects of the parser, thresholds are much lower
-            thresholds: {
-              lines: 70,
-              statements: 70,
-              branches: 70,
-              // to do: get this back above 70
-              functions: 65
-            }
-          }
-        }
-      }
-    },
+    // could add back in when https://github.com/gruntjs/grunt-contrib-jasmine/pull/269 lands
+    // jasmine: {
+    //   coverage: {
+    //     src: [
+    //       "terraformer-wkt-parser.js"
+    //     ],
+    //     options: {
+    //       specs: 'spec/*Spec.js',
+    //       helpers: [
+    //         "node_modules/terraformer/terraformer.js"
+    //       ],
+    //       //keepRunner: true,
+    //       outfile: 'SpecRunner.html',
+    //       template: require('grunt-template-jasmine-istanbul'),
+    //       templateOptions: {
+    //         coverage: './coverage/coverage.json',
+    //         report: './coverage',
+    //         // due to the generated aspects of the parser, thresholds are much lower
+    //         thresholds: {
+    //           lines: 70,
+    //           statements: 70,
+    //           branches: 70,
+    //           // to do: get this back above 70
+    //           functions: 65
+    //         }
+    //       }
+    //     }
+    //   }
+    // },
 
     jasmine_node: {
       options: {
@@ -129,7 +130,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-s3');
 
-  grunt.registerTask('test', [ 'wkt-parser', 'vows', 'jasmine', 'jasmine_node' ]);
+  grunt.registerTask('test', [ 'wkt-parser', 'vows', 'jasmine_node' ]);
   grunt.registerTask('default', [ 'test' ]);
   grunt.registerTask('version', [ 'test', 'uglify', 's3' ]);
 };
