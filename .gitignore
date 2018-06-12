@@ -13,3 +13,5 @@ test.js
 # built files
 terraformer-wkt-parser.js
 terraformer-wkt-parser.min.js
+terraformer-wkt-parser-*.min.js
+

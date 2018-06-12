@@ -65,46 +65,8 @@ module.exports = function (grunt) {
     //   }
     // },
 
-    jasmine_node: {
-      options: {
-        forceExit: true,
-        match: '.',
-        matchall: false,
-        extensions: 'js',
-        specNameMatcher: 'Spec',
-        helperNameMatcher: 'Helpers'
-      },
-      all: ['spec/']
-    },
 
-    s3: {
-      options: {
-        key: '<%= aws.key %>',
-        secret: '<%= aws.secret %>',
-        bucket: '<%= aws.bucket %>',
-        access: 'public-read',
-        headers: {
-          // 1 Year cache policy (1000 * 60 * 60 * 24 * 365)
-          "Cache-Control": "max-age=630720000, public",
-          "Expires": new Date(Date.now() + 63072000000).toUTCString()
-        }
-      },
-      dev: {
-        upload: [
-          {
-            src: 'terraformer-wkt-parser.min.js',
-            dest: 'terraformer-wkt-parser/<%= pkg.version %>/terraformer-wkt-parser.min.js'
-          }
-        ]
-      },
-    }
   });
-
-  var awsExists = fs.existsSync(process.env.HOME + '/terraformer-s3.json');
-
-  if (awsExists) {
-    grunt.config.set('aws', grunt.file.readJSON(process.env.HOME + '/terraformer-s3.json'));
-  }
 
   grunt.registerTask('wkt-parser', 'Building WKT Parser', function() {
     var grammar = fs.readFileSync('./src/wkt.yy', 'utf8');
@@ -127,10 +89,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks("grunt-vows");
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-  grunt.loadNpmTasks('grunt-jasmine-node');
   grunt.loadNpmTasks('grunt-s3');
 
-  grunt.registerTask('test', [ 'wkt-parser', 'vows', 'jasmine_node' ]);
+  grunt.registerTask('test', [ 'wkt-parser', 'vows' ]);
   grunt.registerTask('default', [ 'test' ]);
-  grunt.registerTask('version', [ 'test', 'uglify', 's3' ]);
+  grunt.registerTask('version', [ 'test', 'uglify']);
 };

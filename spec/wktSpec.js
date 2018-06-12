@@ -3,14 +3,6 @@ if(typeof module === "object"){
  Terraformer.WKT = require("../terraformer-wkt-parser");
 }
 
-beforeEach(function() {
-  this.addMatchers({
-    toBeInstanceOfClass: function(classRef){
-      return this.actual instanceof classRef;
-    }
-  });
-});
-
 describe("WKT Convert", function () {
 
   it("should convert a POINT", function () {
@@ -388,7 +380,7 @@ describe("WKT Parser", function() {
     var input = "POINT (30 10)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([30,10]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -396,7 +388,7 @@ describe("WKT Parser", function() {
     var input = "POINT EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -404,7 +396,7 @@ describe("WKT Parser", function() {
     var input = "POINT Z (30 10 20)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([30,10,20]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -412,7 +404,7 @@ describe("WKT Parser", function() {
     var input = "POINT M (30 10 20)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([30,10,20]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -420,7 +412,7 @@ describe("WKT Parser", function() {
     var input = "POINT ZM (30 10 20 15)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([30,10,20,15]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -428,7 +420,7 @@ describe("WKT Parser", function() {
     var input = "POINT (30e0 10 2.0E+001 15)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([30,10,20,15]);
-    expect(output).toBeInstanceOfClass(Terraformer.Point);
+    expect(output instanceof Terraformer.Point).toBeTruthy();
     expect(output.type).toEqual("Point");
   });
 
@@ -436,7 +428,7 @@ describe("WKT Parser", function() {
     var input = "LINESTRING (30 10, 10 30, 40 40)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [30,10], [10,30], [40,40] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.LineString);
+    expect(output instanceof Terraformer.LineString).toBeTruthy();
     expect(output.type).toEqual("LineString");
   });
 
@@ -444,7 +436,7 @@ describe("WKT Parser", function() {
     var input = "LINESTRING EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.LineString);
+    expect(output instanceof Terraformer.LineString).toBeTruthy();
     expect(output.type).toEqual("LineString");
   });
 
@@ -452,7 +444,7 @@ describe("WKT Parser", function() {
     var input = "LINESTRING Z (30 10 5, 10 30 15, 40 40 25)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [30,10,5], [10,30,15], [40,40,25] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.LineString);
+    expect(output instanceof Terraformer.LineString).toBeTruthy();
     expect(output.type).toEqual("LineString");
   });
 
@@ -460,7 +452,7 @@ describe("WKT Parser", function() {
     var input = "LINESTRING M (30 10 5, 10 30 15, 40 40 25)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [30,10,5], [10,30,15], [40,40,25] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.LineString);
+    expect(output instanceof Terraformer.LineString).toBeTruthy();
     expect(output.type).toEqual("LineString");
   });
 
@@ -468,7 +460,7 @@ describe("WKT Parser", function() {
     var input = "LINESTRING ZM (30 10 5 2, 10 30 15 8, 40 40 25 16)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [30,10,5,2], [10,30,15,8], [40,40,25,16] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.LineString);
+    expect(output instanceof Terraformer.LineString).toBeTruthy();
     expect(output.type).toEqual("LineString");
   });
 
@@ -476,7 +468,7 @@ describe("WKT Parser", function() {
     var input = "POLYGON ((30 10, 10 20, 20 40, 40 40, 30 10))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [ [30, 10], [10, 20], [20, 40], [40, 40], [30, 10] ] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -484,7 +476,7 @@ describe("WKT Parser", function() {
     var input = "POLYGON EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -492,7 +484,7 @@ describe("WKT Parser", function() {
     var input = "POLYGON Z ((30 10 4, 10 20 6, 20 40 8, 40 40 1, 30 10 3))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [ [30, 10, 4], [10, 20, 6], [20, 40, 8], [40, 40, 1], [30, 10, 3] ] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -500,7 +492,7 @@ describe("WKT Parser", function() {
     var input = "POLYGON M ((30 10 4, 10 20 6, 20 40 8, 40 40 1, 30 10 3))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [ [30, 10, 4], [10, 20, 6], [20, 40, 8], [40, 40, 1], [30, 10, 3] ] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -508,7 +500,7 @@ describe("WKT Parser", function() {
     var input = "POLYGON ZM ((30 10 4 1, 10 20 6 3, 20 40 8 5, 40 40 1 7, 30 10 3 9))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [ [30, 10, 4, 1], [10, 20, 6, 3], [20, 40, 8, 5], [40, 40, 1, 7], [30, 10, 3, 9] ] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -519,7 +511,7 @@ describe("WKT Parser", function() {
       [ [35, 10],[10, 20],[15, 40],[45, 45],[35, 10] ],
       [ [20, 30],[35, 35],[30, 20],[20, 30] ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.Polygon);
+    expect(output instanceof Terraformer.Polygon).toBeTruthy();
     expect(output.type).toEqual("Polygon");
   });
 
@@ -527,7 +519,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT ((10 40), (40 30), (20 20), (30 10))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40],[40, 30], [20,20], [30,10] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -535,7 +527,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -543,7 +535,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT Z ((10 40 1), (40 30 2), (20 20 3), (30 10 4))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1],[40, 30, 2], [20, 20, 3], [30, 10, 4] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -551,7 +543,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT M ((10 40 1), (40 30 2), (20 20 3), (30 10 4))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1],[40, 30, 2], [20, 20, 3], [30, 10, 4] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -559,7 +551,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT ZM ((10 40 1 8), (40 30 2 9), (20 20 3 8), (30 10 4 9))";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1, 8],[40, 30, 2, 9], [20, 20, 3, 8], [30, 10, 4, 9] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -567,7 +559,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT (10 40, 40 30, 20 20, 30 10)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40],[40, 30], [20,20], [30,10] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -575,7 +567,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT Z (10 40 1, 40 30 2, 20 20 3, 30 10 4)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1],[40, 30, 2], [20, 20, 3], [30, 10, 4] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -583,7 +575,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT M (10 40 1, 40 30 2, 20 20 3, 30 10 4)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1],[40, 30, 2], [20, 20, 3], [30, 10, 4] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -591,7 +583,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOINT ZM (10 40 1 2, 40 30 2 3, 20 20 3 4, 30 10 4 5)";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ [10, 40, 1, 2],[40, 30, 2, 3], [20, 20, 3, 4], [30, 10, 4, 5] ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPoint);
+    expect(output instanceof Terraformer.MultiPoint).toBeTruthy();
     expect(output.type).toEqual("MultiPoint");
   });
 
@@ -602,7 +594,7 @@ describe("WKT Parser", function() {
       [ [10,10],[20,20],[10,40] ],
       [ [40,40],[30,30],[40,20],[30,10] ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiLineString);
+    expect(output instanceof Terraformer.MultiLineString).toBeTruthy();
     expect(output.type).toEqual("MultiLineString");
   });
 
@@ -610,7 +602,7 @@ describe("WKT Parser", function() {
     var input = "MULTILINESTRING EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiLineString);
+    expect(output instanceof Terraformer.MultiLineString).toBeTruthy();
     expect(output.type).toEqual("MultiLineString");
   });
 
@@ -621,7 +613,7 @@ describe("WKT Parser", function() {
       [ [10,10,10],[20,20,20],[10,40,30] ],
       [ [40,40,30],[30,30,20],[40,20,10],[30,10,10] ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiLineString);
+    expect(output instanceof Terraformer.MultiLineString).toBeTruthy();
     expect(output.type).toEqual("MultiLineString");
   });
 
@@ -632,7 +624,7 @@ describe("WKT Parser", function() {
       [ [10,10,10],[20,20,20],[10,40,30] ],
       [ [40,40,30],[30,30,20],[40,20,10],[30,10,10] ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiLineString);
+    expect(output instanceof Terraformer.MultiLineString).toBeTruthy();
     expect(output.type).toEqual("MultiLineString");
   });
 
@@ -643,7 +635,7 @@ describe("WKT Parser", function() {
       [ [10,10,10,5],[20,20,20,4],[10,40,30,3] ],
       [ [40,40,30,2],[30,30,20,1],[40,20,10,2],[30,10,10,3] ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiLineString);
+    expect(output instanceof Terraformer.MultiLineString).toBeTruthy();
     expect(output.type).toEqual("MultiLineString");
   });
 
@@ -658,7 +650,7 @@ describe("WKT Parser", function() {
         [ [15,5],[40,10],[10,20],[5,10],[15,5] ]
       ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 
@@ -666,7 +658,7 @@ describe("WKT Parser", function() {
     var input = "MULTIPOLYGON EMPTY";
     var output = new Terraformer.WKT.parse(input);
     expect(output.coordinates).toEqual([ ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 
@@ -681,7 +673,7 @@ describe("WKT Parser", function() {
         [ [15,5],[40,10],[10,20],[5,10],[15,5] ]
       ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 
@@ -696,7 +688,7 @@ describe("WKT Parser", function() {
         [ [15,5],[40,10],[10,20],[5,10],[15,5] ]
       ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 
@@ -711,7 +703,7 @@ describe("WKT Parser", function() {
         [ [15,5],[40,10],[10,20],[5,10],[15,5] ]
       ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 
@@ -727,7 +719,7 @@ describe("WKT Parser", function() {
         [ [30,20], [20,25], [20,15],[30,20] ]
       ]
     ]);
-    expect(output).toBeInstanceOfClass(Terraformer.MultiPolygon);
+    expect(output instanceof Terraformer.MultiPolygon).toBeTruthy();
     expect(output.type).toEqual("MultiPolygon");
   });
 });
