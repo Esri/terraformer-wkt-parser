@@ -19,7 +19,6 @@
     "grunt": "^1.0.3",
     "grunt-contrib-jasmine": "^2.0.1",
     "grunt-contrib-uglify": "~2.0.0",
-    "grunt-s3": "~0.2.0-alpha.3",
     "grunt-template-jasmine-istanbul": "~0.2.4",
     "grunt-vows": "~0.4.0",
     "jasmine": "^2.8.0",

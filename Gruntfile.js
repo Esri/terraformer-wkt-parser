@@ -2,6 +2,7 @@ var fs = require('fs');
 var jison = require('jison');
 
 module.exports = function (grunt) {
+
   grunt.initConfig({
     pkg:   grunt.file.readJSON('package.json'),
 
@@ -36,36 +37,34 @@ module.exports = function (grunt) {
     },
 
     // could add back in when https://github.com/gruntjs/grunt-contrib-jasmine/pull/269 lands
-    // jasmine: {
-    //   coverage: {
-    //     src: [
-    //       "terraformer-wkt-parser.js"
-    //     ],
-    //     options: {
-    //       specs: 'spec/*Spec.js',
-    //       helpers: [
-    //         "node_modules/terraformer/terraformer.js"
-    //       ],
-    //       //keepRunner: true,
-    //       outfile: 'SpecRunner.html',
-    //       template: require('grunt-template-jasmine-istanbul'),
-    //       templateOptions: {
-    //         coverage: './coverage/coverage.json',
-    //         report: './coverage',
-    //         // due to the generated aspects of the parser, thresholds are much lower
-    //         thresholds: {
-    //           lines: 70,
-    //           statements: 70,
-    //           branches: 70,
-    //           // to do: get this back above 70
-    //           functions: 65
-    //         }
-    //       }
-    //     }
-    //   }
-    // },
-
-
+    jasmine: {
+      coverage: {
+        src: [
+          "terraformer-wkt-parser.js"
+        ],
+        options: {
+          specs: 'spec/*Spec.js',
+          helpers: [
+            "node_modules/terraformer/terraformer.js"
+          ],
+          //keepRunner: true,
+          outfile: 'SpecRunner.html'
+          // template: require('grunt-template-jasmine-istanbul'),
+          // templateOptions: {
+          //   coverage: './coverage/coverage.json',
+          //   report: './coverage',
+          //   // due to the generated aspects of the parser, thresholds are much lower
+          //   thresholds: {
+          //     lines: 70,
+          //     statements: 70,
+          //     branches: 70,
+          //     // to do: get this back above 70
+          //     functions: 65
+          //   }
+          // }
+        }
+      }
+    }
   });
 
   grunt.registerTask('wkt-parser', 'Building WKT Parser', function() {
@@ -89,9 +88,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks("grunt-vows");
   grunt.loadNpmTasks('grunt-contrib-jasmine');
-  grunt.loadNpmTasks('grunt-s3');
 
-  grunt.registerTask('test', [ 'wkt-parser', 'vows' ]);
+  grunt.registerTask('test', [ 'wkt-parser', 'vows', 'jasmine' ]);
   grunt.registerTask('default', [ 'test' ]);
   grunt.registerTask('version', [ 'test', 'uglify']);
 };
