@@ -255,7 +255,7 @@
   function multiPolygonToWKTMultiPolygon (primitive) {
     var ret = 'MULTIPOLYGON ';
 
-    if (primitive.coordinates === undefined || primitive.coordinates.length === 0 || primitive.coordinates[0].length === 0) {
+    if (primitive.coordinates === undefined || primitive.coordinates.length === 0 || primitive.coordinates[0].length === 0 || primitive.coordinates[0][0].length === 0) {
       ret += 'EMPTY';
 
       return ret;
