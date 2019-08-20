@@ -1,3 +1,4 @@
+import GeoJSON from 'geojson';
 export = WKT;
 declare namespace WKT {
     export function parse(wkt: string): GeoJSON.GeometryObject;
