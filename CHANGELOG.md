@@ -4,6 +4,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 
+## [1.2.1] - 2019-12-18
+
+### Fixed
+* Do not throw on MULTIPOLYGON with empty first outer ring.
+* typings fixes
+* release automation cleanup
+
 ## [1.2.0] - 2018-05-17
 
 ### Added
@@ -35,7 +42,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 Initial Release
 
-[unreleased]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.2.0...HEAD
+[unreleased]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.2...v1.2.0
 [1.1.2]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.1...v1.1.2
 [1.1.1]: https://github.com/Esri/terraformer-wkt-parser/compare/v1.1.0...v1.1.1
