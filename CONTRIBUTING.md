@@ -3,5 +3,7 @@ Esri welcomes contributions from anyone and everyone. Please see our [guidelines
 ## release instructions for maintainers
 
 1. bump `package.json` version number
-2. update CHANGELOG.md
-3. run `npm run release`
+1. update CHANGELOG.md
+1. `git commit -m ":package: vX.X.X"`
+1. `git push origin master`
+3. `npm run release`

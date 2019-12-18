@@ -39,6 +39,3 @@ git push https://github.com/Esri/terraformer-wkt-parser :gh-release
 
 # publish release on NPM
 npm publish
-
-# push to s3 bucket
-grunt s3
