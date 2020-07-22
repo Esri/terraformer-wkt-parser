@@ -10,8 +10,10 @@
     "Patrick Arlt <parlt@esri.com>",
     "John Gravois <jgravois@esri.com>"
   ],
+  "optionalDependencies": {
+    "@types/geojson": "^7946.0.0 || ^1.0.0"
+  },
   "dependencies": {
-    "@types/geojson": "^1.0.0",
     "terraformer": "~1.0.5"
   },
   "devDependencies": {
