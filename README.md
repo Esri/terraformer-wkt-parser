@@ -1,3 +1,7 @@
+# Important!
+
+This repo is part of the Terraformer project which has been archived. See https://github.com/Esri/terraformer#important for more details.
+
 # Terraformer Well-Known Text Parser
 
 [![Build Status](https://travis-ci.org/Esri/terraformer-wkt-parser.svg?branch=master)](https://travis-ci.org/Esri/terraformer-wkt-parser)
