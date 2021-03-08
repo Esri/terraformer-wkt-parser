@@ -6,7 +6,7 @@ This repo is part of the Terraformer project which has been archived. See https:
 
 [![Build Status](https://travis-ci.org/Esri/terraformer-wkt-parser.svg?branch=master)](https://travis-ci.org/Esri/terraformer-wkt-parser)
 
-> Two way conversion between [GeoJSON](http://geojson.org/geojson-spec.html) and WKT. Part of the [Terraformer](http://terraformer.io) project.
+> Two way conversion between [GeoJSON](http://geojson.org/geojson-spec.html) and WKT. Part of the [Terraformer](https://terraformer-js.github.io/wkt-parser/) project.
 
 ## Installing
 
@@ -22,7 +22,7 @@ In the browser, Terraformer is required to be used as well.
 
 ## Documentation
 
-For full documentation check out the [offical website](http://terraformer.io/wkt-parser/).
+For full documentation check out https://terraformer-js.github.io/wkt-parser/.
 
 ```js
 var wkt = require('terraformer-wkt-parser');
